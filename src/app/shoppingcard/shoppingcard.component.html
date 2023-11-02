@@ -1,0 +1,20 @@
+<app-navbar></app-navbar>
+
+<div class="shopping">
+  <h2>Your Products </h2>
+  <ul class="product-list">
+    <li class="product-item" *ngFor="let product of products; let i = index">
+        <img [src]="product.imageUrl" alt="{{ product.name }}">
+        <div class="product-info">
+            <h3>{{ product.name }}</h3>
+            <p>Price: ${{ product.price.toFixed(2) }}</p>
+            <input type="number" [(ngModel)]="product.quantity" (input)="updateTotalPrice()">
+        </div>
+        <button (click)="removeProduct(i)" class="remove-button">Remove</button>
+    </li>
+</ul>
+<div class="total">
+    <p>Total Price: ${{ total.toFixed(2) }}</p>
+    <button class="checkout-button">Checkout</button>
+</div>
+</div>

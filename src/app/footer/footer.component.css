@@ -1,0 +1,22 @@
+.bi-arrow-up{
+  position: fixed;
+  bottom: 40px;
+  right: 40p;
+  font-size: 22px;
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  color: rgb(93, 109, 109);
+  border: none;
+  cursor: pointer;
+}
+
+.footer{
+  background: white;
+  color:black;
+
+}
+.icon{
+height: 30px;
+width: 30px;
+}

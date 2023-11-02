@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+<div class="prod">
+  <div class="header">
+    <h1>Products</h1>
+    <button class="add-button" [routerLink]="['/addprod']" >Add New Product</button>
+  </div>
+  <table class="prod-table">
+      <thead>
+          <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Brand</th>
+              <th>Category</th>
+              <th>Actions</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>1</td>
+              <td>Product 1</td>
+              <td>Description Product</td>
+              <td>Brand 1</td>
+              <td>Category 1</td>
+              <td>
+                  <button class="update-button" [routerLink]="['/updateprod']">Update</button>
+                  <button class="delete-button">Delete</button>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+</div>

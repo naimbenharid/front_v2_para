@@ -1,0 +1,55 @@
+<app-navbar></app-navbar>
+<div class="updateprod">
+<div class="form">
+  <div class="title">Update Product</div>
+
+  <div class="input-container ic2">
+    <input placeholder="" type="text" class="input" id="IdProd" disabled>
+    <div class="cut"></div>
+    <label class="iLabel" for="IdProd">id</label>
+  </div>
+  <div class="input-container ic1">
+    <input placeholder="" type="text" class="input" id="productName">
+    <div class="cut"></div>
+    <label class="iLabel" for="productName">Product Name</label>
+  </div>
+
+  <div class="input-container ic2">
+    <input placeholder="" type="text" class="input" id="prodDescription">
+    <div class="cut"></div>
+    <label class="iLabel" for="prodDescription">Description</label>
+  </div>
+  <div class="input-container ic2">
+    <select class="input" id="brandSelect">
+      <option value=""></option>
+      <option value="brand1">Brand 1</option>
+      <option value="brand2">Brand 2</option>
+      <option value="brand3">Brand 3</option>
+    </select>
+    <div class="cut cut-short"></div>
+    <label class="iLabel" for="brandSelect">Select Brand</label>
+  </div>
+  <div class="input-container ic2">
+    <select class="input" id="categorySelect">
+      <option value=""></option>
+      <option value="category1">Category 1</option>
+      <option value="category2">Category 2</option>
+      <option value="category3">Category 3</option>
+
+    </select>
+    <div class="cut cut-short"></div>
+    <label class="iLabel" for="categorySelect">Select Category</label>
+  </div>
+  <div class="input-container ic2">
+    <input placeholder="" type="text" class="input" id="price">
+    <div class="cut cut-short"></div>
+    <label class="iLabel" for="price">Price</label>
+  </div>
+  <div class="input-container ic2">
+    <input placeholder="" type="text" class="input" id="quantity">
+    <div class="cut cut-short"></div>
+    <label class="iLabel" for="quantity">Quantity</label>
+  </div>
+  <button class="submit" [routerLink]="['/prod']" type="text">UPDATE PRODUCT</button>
+</div>
+</div>

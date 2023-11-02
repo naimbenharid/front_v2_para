@@ -1,0 +1,18 @@
+<app-navbar></app-navbar>
+<div class class="product-container">
+<div class="card" *ngFor="let product of products">
+  <div class="img_p">
+    <img src="../../assets/medi2.jpg" alt="product image" />
+  </div>
+
+  <div class="text">
+    <a class="h3" href="/item">{{ product.title }}</a>
+    <p class="p">{{ product.description }}</p>
+    <div class="icon-box">
+      <p class="span">{{product.price}}</p>
+    </div>
+  </div>
+</div>
+</div>
+
+

@@ -1,0 +1,43 @@
+.navbar {
+  background-color: #333;
+  color: #fff;
+
+  text-align: center;
+}
+
+/* Style the list items in the navbar */
+.navbar-list {
+  list-style-type: none;
+}
+
+.navbar-item {
+  display: inline;
+  margin-right: 20px;
+}
+
+/* Style the links in the navbar */
+.navbar-item a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Style the Login button */
+.login-button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.login-button:hover {
+  background-color: #2980b9;
+}
+
+.navbar-item a:hover {
+  border-bottom: 2px solid #fff;
+}
