@@ -34,7 +34,7 @@ export class ProductService {
   }
 
   createProduct(product: Product): Observable<Product> {
-    return this.httpClient.post<Product>(`${this.apiUrl}/addProduct`, product);
+    return this.httpClient.post<Product>(`${this.apiUrl}/addProduct`,product);
   }
 
   updateProduct(id: number, updatedProduct: Product): Observable<void> {

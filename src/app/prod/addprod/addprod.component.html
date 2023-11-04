@@ -5,47 +5,54 @@
 
 
   <div class="input-container ic1">
-    <input placeholder="" type="text" class="input" id="productName">
+    <input placeholder="" type="text" class="input" [(ngModel)]="newProduct.name" name="name" id="productName">
     <div class="cut"></div>
-    <label class="iLabel" for="productName">Product Name</label>
+    <label class="iLabel" name="productName" >Product Name</label>
   </div>
 
   <div class="input-container ic2">
-    <input placeholder="" type="text" class="input" id="prodDescription">
+    <input placeholder="" type="text" class="input" [(ngModel)]="newProduct.description" name="description" id="prodDescription">
     <div class="cut"></div>
     <label class="iLabel" for="prodDescription">Description</label>
   </div>
+
   <div class="input-container ic2">
-    <select class="input" id="brandSelect">
+    <select class="input" id="brandSelect" [(ngModel)]="newBrand.name" name="name">
+      <!--Select Brand-->
       <option value=""></option>
-      <option value="brand1">Brand 1</option>
-      <option value="brand2">Brand 2</option>
-      <option value="brand3">Brand 3</option>
+      <option *ngFor="let brand of brands"  [ngValue]= brand >
+           {{brand.name}}
+     </option>
+           <!--End-->
     </select>
     <div class="cut cut-short"></div>
     <label class="iLabel" for="brandSelect">Select Brand</label>
   </div>
-  <div class="input-container ic2">
-    <select class="input" id="categorySelect">
-      <option value=""></option>
-      <option value="category1">Category 1</option>
-      <option value="category2">Category 2</option>
-      <option value="category3">Category 3</option>
 
+  <div class="input-container ic2">
+    <select class="input" id="categorySelect" [(ngModel)]="newCategory.name" name="name">
+       <!--Select Category-->
+       <option value=""></option>
+       <option *ngFor="let category of Categories" [ngValue]=category>
+       {{category.name}}
+      </option>
+            <!--End-->
     </select>
     <div class="cut cut-short"></div>
     <label class="iLabel" for="categorySelect">Select Category</label>
   </div>
+
   <div class="input-container ic2">
-    <input placeholder="" type="text" class="input" id="price">
+    <input placeholder="" type="text" class="input"[(ngModel)]="newProduct.price" name="price" id="price">
     <div class="cut cut-short"></div>
     <label class="iLabel" for="price">Price</label>
   </div>
+
   <div class="input-container ic2">
-    <input placeholder="" type="text" class="input" id="quantity">
+    <input placeholder="" type="text" class="input" [(ngModel)]="newProduct.qte" name="qte" id="quantity">
     <div class="cut cut-short"></div>
     <label class="iLabel" for="quantity">Quantity</label>
   </div>
-  <button class="submit" [routerLink]="['/prod']" type="text">ADD PRODUCT</button>
+  <button class="submit"   (click)="addProduct()" [routerLink]="['/prod']" type="text">ADD PRODUCT</button>
 </div>
 </div>

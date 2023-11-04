@@ -1,3 +1,4 @@
+import { Brand } from "./Brand";
 import { Category } from "./Category";
 
 export class Product {
@@ -6,9 +7,12 @@ export class Product {
   description: string;
   price: number;
   qte: number;
+  category: Category;
+  brand:Brand;
+//  image:Image;
 //  brand: Brand; // Assurez-vous d'importer correctement le modèle Brand
  // images: Image[]; // Assurez-vous d'importer correctement le modèle Image
-  category: Category; // Assurez-vous d'importer correctement le modèle Category
+   // Assurez-vous d'importer correctement le modèle Category
  // orderItems: OrderItem[];  Assurez-vous d'importer correctement le modèle OrderItem
 
   constructor() {
@@ -17,9 +21,10 @@ export class Product {
     this.description = '';
     this.price = 0;
     this.qte = 0;
-   // this.brand = new Brand();
- //   this.images = [];
+   // this.image = new Image();
+    this.brand = new Brand();
     this.category = new Category();
+
  //   this.orderItems = [];
   }
 }
