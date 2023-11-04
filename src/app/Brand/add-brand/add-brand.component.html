@@ -4,30 +4,30 @@
        <div class="text">
          Add  New Brand
        </div>
-       <form #f="ngForm">
-          <div class="form-row">
+       <form #f="ngForm" (ngSubmit)="add()">
+        <div class="form-row">
 
-             <div class="input-data">
-                <input type="text" placeholder="BioDerma" >
-                <div class="underline"></div>
-                <label for="">Brand name</label>
-             </div>
-          </div>
-          <div class="form-row">
-           <div class="input-data textarea">
-             <textarea rows="8" cols="80"  placeholder="this brand is ......"></textarea>
-             <br />
-             <div class="underline"></div>
-             <label for="">Description of Brand</label>
-             <br />
-             <div class="form-row submit-btn">
-                <div class="input-data">
-                   <div class="inner" ></div>
-                   <input type="submit"  value="Add Brand" style="text-align: center;">
-                </div>
-             </div>
-          </div>
-       </div>
-       </form>
+           <div class="input-data">
+              <input type="text" [(ngModel)]="name" name="name" placeholder="BioDerma" >
+              <div class="underline"></div>
+              <label for="">Brand name</label>
+           </div>
+        </div>
+        <div class="form-row">
+         <div class="input-data textarea">
+           <textarea rows="8" cols="80" [(ngModel)]="description" name="description"   placeholder="this brand is ......"></textarea>
+           <br />
+           <div class="underline"></div>
+           <label for="">Description of Brand</label>
+           <br />
+           <div class="form-row submit-btn">
+              <div class="input-data">
+                 <div class="inner" ></div>
+                 <input type="submit"  value="Add Brand" style="text-align: center;">
+              </div>
+           </div>
+        </div>
+     </div>
+     </form>
    </div>
    </body>

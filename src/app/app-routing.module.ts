@@ -26,21 +26,21 @@ import { UpdateprodComponent } from './prod/updateprod/updateprod.component';
 const routes: Routes = [
   {path:"prod",component:ProdlistComponent},
   {path:"addprod",component:AddprodComponent},
-  {path:"updateprod",component:UpdateprodComponent},
+  {path:"updateprod/:id",component:UpdateprodComponent},
 
 
   {path :"orders" , component: OrderComponent},
   {path :"addorder" , component: AddOrderComponent},
-  {path :"updateorder" , component: UpdateOrderComponent},
+  {path :"updateorder/:id" , component: UpdateOrderComponent},
 
   {path :"brands" , component: BrandComponent},
   {path :"addbrand" , component: AddBrandComponent},
-  {path :"updatebrand" , component: UpdateBrandComponent},
+  {path :"updatebrand/:id" , component: UpdateBrandComponent},
 
 
   {path :"categories" , component: CategoryComponent},
   {path :"addcategory" , component: AddCategoryComponent},
-  {path :"updatecategory" , component: UpdateCategoryComponent},
+  {path :"updatecategory/:id" , component: UpdateCategoryComponent},
 
 
   {path:"register",component:RegisterComponent},

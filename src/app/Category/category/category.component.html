@@ -32,20 +32,18 @@
 <table class="modern-table">
     <thead>
         <tr>
-            <th>ID</th>
             <th>Name</th>
             <th>Description</th>
             <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>1</td>
-            <td>Category 1</td>
-            <td>Description 1</td>
+        <tr *ngFor="let category of categories">
+            <td>{{category.name}}</td>
+            <td>{{category.description}}</td>
             <td>
-                <button class="update-button" [routerLink]="['/updatecategory']">Update</button>
-                <button class="delete-button">Delete</button>
+                <button class="update-button" [routerLink]="['/updatecategory',category.id]">Update</button>
+                <button class="delete-button" (click)="delete(category.id)">Delete</button>
             </td>
         </tr>
 

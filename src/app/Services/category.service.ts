@@ -17,33 +17,33 @@ const httpOptions = {
 
 
 export class CategoryService {
-  private BaseUrl ='http://localhost:8080/categories' ;
+  private BaseUrl ='http://localhost:8082/categories' ;
   constructor( private http : HttpClient) { }
-  //Post : 
+  //Post :
   postCategory(category : Category) :Observable<Category>{
     return this.http.post<Category>(`${this.BaseUrl}/addCategory`, category)
   }
   //Put Category :
-  putCategory(id :number , updatedCategory :Category) :Observable<Category>
+  putCategory(updatedCategory :Category) :Observable<Category>
   {
-    return this.http.put<Category>(`${this.BaseUrl}/update/${id}`, updatedCategory)
+    return this.http.put<Category>(`${this.BaseUrl}/update`, updatedCategory)
   }
-  //Delete Category : 
+  //Delete Category :
   deleteCtegory(id : number) : Observable<void>{
     return this.http.delete<void>(`${this.BaseUrl}/deleteCategory/${id}`);
   }
-  // Get All Categories : 
+  // Get All Categories :
   getAllCategories(): Observable<Category[]> {
     return this.http.get<Category[]>(`${this.BaseUrl}/getAllCategories`,httpOptions);
   }
-   //Get products by category : 
+   //Get products by category :
    getProductsByategory(id :number ) :Observable<Product[]>{
     return this.http.get<Product[]>(`${this.BaseUrl}/getProductsByCategory/${id}`);
 
   }
-  // Get category by ID : 
+  // Get category by ID :
   getCtegoryById(id : number ): Observable<Category>{
     return this.http.get<Category>(`${this.BaseUrl}/getCategoryById/${id}`) ;
   }
- 
+
 }
