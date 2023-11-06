@@ -14,7 +14,6 @@ export class ProdlistComponent {
   products: Product[] = [];
   categories:Category [] = [];
   brands: Brand[] = [];
-
   newProduct: Product = new Product();
 
   selectedProduct: Product | null = null;

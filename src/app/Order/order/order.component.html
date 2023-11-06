@@ -7,7 +7,6 @@
   <table class="orders-table">
       <thead>
           <tr>
-              <th>ID</th>
               <th>Order Date</th>
               <th>Delivery Address</th>
               <th>Total Amount</th>
@@ -16,16 +15,15 @@
           </tr>
       </thead>
       <tbody>
-          <tr>
-              <td>1</td>
-              <td>2023-09-15</td>
-              <td>123 Main St</td>
-              <td>$100.00</td>
-              <td>Shipped</td>
-              <td>
-                  <button class="update-button" [routerLink]="['/updateorder']">Update</button>
-                  <button class="delete-button">Delete</button>
-              </td>
+          <tr *ngFor=" let order of orders" >
+            <td>{{order.orderDate}}</td>
+            <td>{{order.deliveryAddress}}</td>
+            <td>{{order.totalAmount}}</td>
+            <td>{{order.orderStatus}}</td>
+            <td>
+              <button class="update-button" [routerLink]="['/updateorder',order.id]">Update</button>
+              <button class="delete-button" (click)="delete(order.id)">Delete</button>
+            </td>
           </tr>
       </tbody>
   </table>

@@ -1,13 +1,19 @@
-.addprod{
+.addprod {
   position: absolute;
-  top: 10%;
+  top: 20%;
   left: 35%;
   padding: 40px;
+  background: linear-gradient(to right, #9c5ab8, #52b3f4);
+  border-radius: 10px; /* Ajoutez ceci pour des coins arrondis, si vous le souhaitez */
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5); /* Ajoutez ceci pour une ombre portée */
+  color: white; /* Changez la couleur du texte pour qu'il soit lisible sur le fond violet-bleu */
 }
 
+
 .form {
-  background-color: #15172b;
-  border-radius: 20px;
+  background: linear-gradient(to right, #3498db, #8e44ad);
+  border-radius: 10px; /* Ajoutez ceci pour des coins arrondis, si vous le souhaitez */
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5); /* Ajoutez ceci pour une ombre portée */
   box-sizing: border-box;
   height:100%;
   padding: 20px;
@@ -51,20 +57,20 @@
 }
 
 .input {
-  background-color: #303245;
+  background: linear-gradient(to right, #bc92ceab, #52b3f4);
   border-radius: 12px;
-  border: 0;
+  border: 2px solid violet; /* Bordure violette avec une largeur de 2px */
   box-sizing: border-box;
   color: #eee;
   font-size: 18px;
   height: 100%;
-  outline: 0;
+  outline: none; /* Contour transparent */
   padding: 4px 20px 0;
   width: 100%;
 }
 
 .cut {
-  background-color: #15172b;
+
   border-radius: 10px;
   height: 20px;
   left: 20px;
@@ -73,10 +79,12 @@
   transform: translateY(0);
   transition: transform 200ms;
   width: 76px;
+
 }
 
 .cut-short {
   width: 50px;
+  font-size: 50px;
 }
 
 .iLabel {
@@ -100,27 +108,41 @@
 }
 
 .input:not(:focus) ~ .iLabel {
-  color: #808097;
+  color: #ffffff;
 }
 
 .input:focus ~ .iLabel {
-  color: #dc2f55;
+  color: #8600ba;
+  font-size:25px ;
 }
 
 .submit {
-  background-color: #08d;
-  border-radius: 12px;
-  border: 0;
+  background: linear-gradient(to right, #8e44ad, #3498db); /* Dégradation de violet à bleu */
+  border: 1px solid transparent; /* Bordure réduite et transparente par défaut */
+  border-radius: 10px;
   box-sizing: border-box;
-  color: #eee;
+  color: white;
   cursor: pointer;
-  font-size: 18px;
-  height: 50px;
-  margin-top: 38px;
+  display: inline-block;
+  font-weight: 390;
+  letter-spacing: 2px;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 6px 20px; /* Taille de la marge interne réduite */
+  position: relative;
   text-align: center;
-  width: 100%;
+  text-decoration: none;
+  text-transform: none;
+  transition: all 0.3s ease-in-out;
+  user-select: none;
+  font-size: 12px; /* Taille de la police réduite */
+  width: 150px;
+  margin-left: 250px;
+  margin-top: 35px;
 }
 
-.submit:active {
-  background-color: #06b;
+.submit:hover{
+  background: linear-gradient(to right, #3498db, #8e44ad); /* Inversion des couleurs au survol */
+  border: 2px solid #8e44ad; /* Contour blanc au survol */
 }

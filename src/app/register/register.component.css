@@ -8,11 +8,20 @@
   padding: 20px;
   border-radius: 20px;
   position: absolute;
-  background-color: #1a1a1a;
+  background: linear-gradient(90deg, #3498db, #8e44ad);
   color: #fff;
   border: 1px solid #333;
+  animation: gradientAnimation 5s infinite linear;
 }
 
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
 .title {
   font-size: 28px;
   font-weight: 600;
@@ -21,7 +30,7 @@
   display: flex;
   align-items: center;
   padding-left: 30px;
-  color: #00bfff;
+  color: #862cf3;
 }
 
 .title::before {
@@ -49,15 +58,14 @@
 .message,
 .signin {
   font-size: 14.5px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #ffffff;
 }
-
 .signin {
   text-align: center;
 }
 
 .signin a:hover {
-  text-decoration: underline royalblue;
+  text-decoration: underline rebeccapurple
 }
 
 .signin a {
@@ -75,17 +83,20 @@
 }
 
 .form label .input {
-  background-color: #333;
-  color: #fff;
+  border: 2px solid #b954e1; /* Bordure violette */
+  outline: none;
+  color: white;
+  background-color: transparent;
   width: 100%;
   padding: 20px 05px 05px 10px;
   outline: 0;
-  border: 1px solid rgba(105, 105, 105, 0.397);
+  transition: box-shadow 0.3s ease;
+
   border-radius: 10px;
 }
 
 .form label .input + span {
-  color: rgba(255, 255, 255, 0.5);
+  color: #ffffff;
   position: absolute;
   left: 10px;
   top: 0px;
@@ -101,9 +112,9 @@
 
 .form label .input:focus + span,
 .form label .input:valid + span {
-  color: #00bfff;
+  color: #ea00ff;
   top: 0px;
-  font-size: 0.7em;
+  font-size: 1em;
   font-weight: 600;
 }
 
@@ -112,18 +123,21 @@
 }
 
 .submit {
-  border: none;
-  outline: none;
-  padding: 10px;
-  border-radius: 10px;
-  color: #fff;
-  font-size: 16px;
-  transform: .3s ease;
-  background-color: #00bfff;
+  border: 2px solid #8e44ad; /* Bordure violette */
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 16px;
+    background-color: transparent; /* Fond transparent */
+    transition: box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
+
 .submit:hover {
-  background-color: #00bfff96;
+  box-shadow: 0 0 10px 10px #8e44ad; /* Effet dynamique avec une bordure violette au survol */
+
 }
 
 @keyframes pulse {

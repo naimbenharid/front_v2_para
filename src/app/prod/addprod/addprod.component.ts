@@ -16,18 +16,28 @@ export class AddprodComponent {
 
   newBrand = new Brand();
   newCategory =new Category();
-  newProduct =new Product();
+ // newProduct =new Product();
+  selectedCategoryId?: number ;
+  selectedBrandId?: number;
 
-  brands! : Brand[];
-  Categories! : Category[];
   products!: Product[];
 
+
+  newProduct: Product = new Product(); // Initialisez un nouvel objet Product
+  categories: Category[] = []; // Initialisez la liste des catégories
+  brands: Brand[] = [];
 
 
   constructor(private  brandService : BrandService,
               private categoryService :CategoryService,
               private productService:ProductService,
               private router : Router)  {}
+
+  onCategorySelect(selectedValue: any)
+    {
+    console.log('Catégorie sélectionnée :', selectedValue);
+    this.newProduct.category = selectedValue;
+    }
 
 
   ngOnInit(): void
@@ -36,17 +46,17 @@ export class AddprodComponent {
       this.getCategories();
     }
 
-
-  supprimerClient()
-     {}
-
   addProduct ()
     {
+      console.log('Catégorie sélectionnée dans addProduct :', this.newProduct.category);
       this.productService.createProduct(this.newProduct).subscribe(v => {
       console.log(v);
-      this.router.navigate(['prod']);
+      this.router.navigate(['/prod']);
       });
    }
+
+
+
    getBrands()
    {
      this.brandService.getAllBrands().subscribe(brand =>
@@ -61,7 +71,7 @@ export class AddprodComponent {
     {
       this.categoryService.getAllCategories().subscribe(cat =>
         {
-        this.Categories = cat;
+        this.categories = cat;
         console.log(cat);
         })
         this.categoryService.getAllCategories();

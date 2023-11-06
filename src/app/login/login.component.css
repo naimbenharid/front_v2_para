@@ -1,17 +1,20 @@
 .form {
   display: flex;
-  left:37%;
-  margin-top: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   flex-direction: column;
   gap: 10px;
   width: 500px;
   padding: 20px;
   border-radius: 20px;
-  position: absolute;
-  background-color: #1a1a1a;
+  background: linear-gradient(to bottom, #4169e1, #a358ea); /* Dégradé de violet à bleu */
   color: #fff;
   border: 1px solid #333;
 }
+
+
 
 .title {
   font-size: 28px;
@@ -21,7 +24,7 @@
   display: flex;
   align-items: center;
   padding-left: 30px;
-  color: #00bfff;
+  color: #e95de9;
 }
 
 .title::before {
@@ -84,14 +87,17 @@
   border-radius: 10px;
 }
 
-.form label .input + span {
-  color: rgba(255, 255, 255, 0.5);
-  position: absolute;
-  left: 10px;
-  top: 0px;
-  font-size: 0.9em;
-  cursor: text;
-  transition: 0.3s ease;
+.form label .input {
+  border: 2px solid #b954e1; /* Bordure violette */
+  outline: none;
+  color: white;
+  background-color: transparent;
+  width: 100%;
+  padding: 20px 05px 05px 10px;
+  outline: 0;
+  transition: box-shadow 0.3s ease;
+
+  border-radius: 10px;
 }
 
 .form label .input:placeholder-shown + span {
@@ -112,18 +118,20 @@
 }
 
 .submit {
-  border: none;
-  outline: none;
-  padding: 10px;
-  border-radius: 10px;
-  color: #fff;
-  font-size: 16px;
-  transform: .3s ease;
-  background-color: #00bfff;
+     border: 2px solid #670691; /* Bordure violette */
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 16px;
+    background-color: transparent; /* Fond transparent */
+    transition: box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
 .submit:hover {
-  background-color: #00bfff96;
+  box-shadow: 0 0 10px 10px #8e44ad; /* Effet dynamique avec une bordure violette au survol */
+
 }
 
 @keyframes pulse {

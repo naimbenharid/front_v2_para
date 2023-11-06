@@ -17,10 +17,10 @@
   </div>
 
   <div class="input-container ic2">
-    <select class="input" id="brandSelect" [(ngModel)]="newBrand.name" name="name">
+    <select class="input" id="brandSelect" [(ngModel)]="selectedBrandId" name="selectedBrandId">
       <!--Select Brand-->
       <option value=""></option>
-      <option *ngFor="let brand of brands"  [ngValue]= brand >
+      <option *ngFor="let brand of brands"  [ngValue]= brand.id >
            {{brand.name}}
      </option>
            <!--End-->
@@ -30,10 +30,10 @@
   </div>
 
   <div class="input-container ic2">
-    <select class="input" id="categorySelect" [(ngModel)]="newCategory.name" name="name">
+    <select class="input" id="categorySelect" [(ngModel)]="selectedCategoryId" name="selectedBrandId">
        <!--Select Category-->
        <option value=""></option>
-       <option *ngFor="let category of Categories" [ngValue]=category>
+       <option *ngFor="let category of categories" [ngValue]=category.name>
        {{category.name}}
       </option>
             <!--End-->

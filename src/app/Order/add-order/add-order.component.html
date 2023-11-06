@@ -1,35 +1,32 @@
-<app-navbar></app-navbar>
+l<app-navbar></app-navbar>
 <div class="addorder">
   <h2>Add Order</h2>
 <form class="form">
   <label>
     <span class="spantext">Order Date</span>
-      <input class="input" type="date" required="" >
+      <input class="input" type="date" required=""  [(ngModel)]="newOrder.orderDate" name="orderDate" >
     </label>
 
   <label>
     <span class="spantext">Delivery Address </span>
-    <input class="input" type="text" placeholder="" required="">
+    <input class="input" type="text" placeholder="" required="" [(ngModel)]="newOrder.deliveryAddress" name="deliveryAddress" >
   </label>
 
   <label>
     <span class="spantext">Total Ammount</span>
-    <input class="input" placeholder="" type="number" required="">
+    <input class="input" placeholder="" type="number" required="" [(ngModel)]="newOrder.totalAmount" name="totalAmount">
   </label>
 
   <label>
-    <span class="spantext">Status &nbsp;&nbsp;</span>
-    <select>
-      <option selected style="color: gray;">Status</option>
-      <option value="1">Pending</option>
-      <option value="2">Processing</option>
-      <option value="3">Shipped</option>
-      <option value="3">Delivered</option>
-      <option value="3">Cancelled</option>
+    <span>Status &nbsp;&nbsp;</span>
+    <select  class="select-status " [(ngModel)]="newOrder!.orderStatus" name="OrderStatus">
+      <option *ngFor="let order of OrderStatus" [ngValue]=order>
+        {{order}}
+       </option>
     </select>
   </label>
 
-  <button [routerLink]="['/orders']" class="fancy">
+  <button type="submit"  (click)="add()" [routerLink]="['/orders']" class="fancy">
     <span class="top-key"></span>
     <span class="text">submit</span>
     <span class="bottom-key-1"></span>

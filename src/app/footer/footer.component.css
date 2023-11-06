@@ -11,10 +11,20 @@
   cursor: pointer;
 }
 
-.footer{
-  background: white;
-  color:black;
-
+.footer {
+  background: linear-gradient(to right, #3498db, #8e44ad);
+  /* Pour les navigateurs qui ne prennent pas en charge les dégradés CSS3 */
+  background: -webkit-linear-gradient(to right, #3498db, #8e44ad);
+  /* Pour les navigateurs Safari 5.1 à 6.0 */
+  background: -moz-linear-gradient(to right, #3498db, #8e44ad);
+  /* Pour les navigateurs Firefox 3.6 à 15 */
+  background: -o-linear-gradient(to right, #3498db, #8e44ad);
+  /* Pour les navigateurs Opera 11.1 à 12.0 */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3498db', endColorstr='#8e44ad',GradientType=1);
+  /* Pour les navigateurs IE 6 à 9 */
+  color: white; /* Pour s'assurer que le texte est lisible sur le dégradé de couleur */
+  padding: 20px; /* Ajoutez un peu de marge intérieure pour le contenu du footer */
+  text-align: center; /* Centrez le contenu du footer */
 }
 .icon{
 height: 30px;

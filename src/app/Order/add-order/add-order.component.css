@@ -1,15 +1,24 @@
-.addorder{
+.addorder {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   width: 600px;
   padding: 40px;
   transform: translate(-50%, -50%);
   box-sizing: border-box;
-  background-color: #355891;
+  background: linear-gradient(to right, #8e44ad, #3498db);
+  /* Pour les navigateurs qui ne prennent pas en charge les dégradés CSS3 */
+  background: -webkit-linear-gradient(to right, #8e44ad, #3498db);
+  /* Pour les navigateurs Safari 5.1 à 6.0 */
+  background: -moz-linear-gradient(to right, #8e44ad, #3498db);
+  /* Pour les navigateurs Firefox 3.6 à 15 */
+  background: -o-linear-gradient(to right, #8e44ad, #3498db);
+  /* Pour les navigateurs Opera 11.1 à 12.0 */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8e44ad', endColorstr='#3498db',GradientType=1);
+  /* Pour les navigateurs IE 6 à 9 */
   box-shadow: 0 15px 25px rgba(0,0,0,.6);
   border-radius: 40px;
-
+  color: #fff;
 }
 
 .form {
@@ -17,20 +26,29 @@
   flex-direction: column;
   gap: 10px;
   max-width: 550px;
-  background-color: #355891;
+  background: linear-gradient(to right, #d086f0, #3498db);
+  /* Pour les navigateurs qui ne prennent pas en charge les dégradés CSS3 */
+  background: -webkit-linear-gradient(to right, #8c1dbc, #3498db);
+  /* Pour les navigateurs Safari 5.1 à 6.0 */
+  background: -moz-linear-gradient(to right, #8e44ad, #3498db);
+  /* Pour les navigateurs Firefox 3.6 à 15 */
+  background: -o-linear-gradient(to right, #8e44ad, #3498db);
+  /* Pour les navigateurs Opera 11.1 à 12.0 */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8e44ad', endColorstr='#3498db',GradientType=1);
+  /* Pour les navigateurs IE 6 à 9 */
   padding: 20px;
-  border-radius: 10px;
+  border-radius:30px;
   position: relative;
+  color: #fff;
+  box-shadow:20px ;
 }
+
+
 h2{
 color: #fff;
 text-align: center;
 }
 
-
-.spantext{
-  color: white;
-}
 
 .message {
   color: #355891;
@@ -45,10 +63,13 @@ text-align: center;
 .form label .input {
   width: 100%;
   padding: 10px 10px 20px 10px;
-  outline: 0;
-  border: 1px solid #355891;
+  border: 2px solid #fff; /* Ajoutez cette ligne pour ajouter un contour blanc */
   border-radius: 5px;
+  outline: none; /* Supprime l'effet de contour du champ de formulaire par défaut */
+  background: transparent; /* Rend le fond du champ de formulaire transparent */
+  color: #fff; /* Couleur du texte */
 }
+
 
 .form label .input + span {
   position: absolute;
@@ -111,11 +132,11 @@ text-align: center;
 }
 
 .fancy {
-  background-color: white;
-  border: 2px solid #355891;
-  border-radius: 0px;
+  background: linear-gradient(to right, #8e44ad, #3498db); /* Dégradation de violet à bleu */
+  border: 1px solid transparent; /* Bordure réduite et transparente par défaut */
+  border-radius: 10px;
   box-sizing: border-box;
-  color: #355891;
+  color: white;
   cursor: pointer;
   display: inline-block;
   font-weight: 390;
@@ -123,29 +144,22 @@ text-align: center;
   margin: 0;
   outline: none;
   overflow: visible;
-  padding: 8px 30px;
+  padding: 6px 20px; /* Taille de la marge interne réduite */
   position: relative;
   text-align: center;
   text-decoration: none;
   text-transform: none;
   transition: all 0.3s ease-in-out;
   user-select: none;
-  font-size: 13px;
+  font-size: 12px; /* Taille de la police réduite */
 }
 
-.fancy::before {
-  content: " ";
-  width: 1.7rem;
-  height: 2px;
-  background: #355891;
-  top: 50%;
-  left: 1.5em;
-  position: absolute;
-  transform: translateY(-50%);
-  transform: translateX(230%);
-  transform-origin: center;
-  transition: background 0.3s linear, width 0.3s linear;
+
+.fancy:hover {
+  background: linear-gradient(to right, #3498db, #8e44ad); /* Inversion des couleurs au survol */
+  border: 2px solid #8e44ad; /* Contour blanc au survol */
 }
+
 
 .fancy .text {
   font-size: 1.125em;
@@ -156,7 +170,7 @@ text-align: center;
   transition: all 0.3s ease-in-out;
   text-transform: lowercase;
   text-decoration: none;
-  color: #355891;
+  color: #e3e8f1;
   transform: translateX(30%);
 }
 
@@ -176,7 +190,7 @@ text-align: center;
   right: 1.875rem;
   bottom: -2px;
   position: absolute;
-  background: #355891;
+  background: #89a6d5;
   transition: width 0.5s ease-out, right 0.3s ease-out;
 }
 
@@ -190,10 +204,7 @@ text-align: center;
   transition: width 0.5s ease-out, right 0.3s ease-out;
 }
 
-.fancy:hover {
-  color: #355891;
-  background: #5f82a9;
-}
+
 
 .fancy:hover::before {
   width: 1.5rem;
@@ -214,4 +225,35 @@ text-align: center;
  .fancy:hover .bottom-key-2 {
   right: 0;
   width: 0;
+}
+
+.select-status {
+  background: linear-gradient(to right, #8e44ad, #72b4e0); /* Dégradation de violet à bleu */
+  border: 1px solid #8e44ad; /* Bordure de couleur violet foncé */
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+  width: 200px;
+}
+.spantext {
+ margin-left:20px ;
+ color: white;
+}
+
+.select-status option {
+  background-color: #8e44ad; /* Couleur de fond pour les options */
+  color: rgb(255, 255, 255);
+}
+
+/* Style pour l'option "Status" */
+.select-status option:first-child {
+  color: rgb(128, 128, 128);
+}
+
+/* Style pour l'option sélectionnée */
+.select-status option:checked {
+  background-color: #cae0ef; /* Couleur de fond pour l'option sélectionnée */
 }

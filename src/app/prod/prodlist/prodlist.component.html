@@ -20,8 +20,8 @@
         <tr *ngFor="let prod of products ">
           <td>{{prod.name}}</td>
           <td>{{prod.description}} </td>
-          <td>{{prod.brand.name}} </td>
-          <td>{{prod.category.name}} </td>
+          <td>{{prod.brand?.push}} </td>
+          <td>{{prod.category?.push}} </td>
           <td>{{prod.price}}</td>
           <td>{{prod.qte}}</td>
           <td>

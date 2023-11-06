@@ -7,8 +7,8 @@ export class Product {
   description: string;
   price: number;
   qte: number;
-  category: Category;
-  brand:Brand;
+  category?: Category[];
+  brand?:Brand[];
 //  image:Image;
 //  brand: Brand; // Assurez-vous d'importer correctement le modèle Brand
  // images: Image[]; // Assurez-vous d'importer correctement le modèle Image
@@ -22,9 +22,5 @@ export class Product {
     this.price = 0;
     this.qte = 0;
    // this.image = new Image();
-    this.brand = new Brand();
-    this.category = new Category();
-
- //   this.orderItems = [];
   }
 }

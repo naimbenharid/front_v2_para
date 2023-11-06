@@ -5,17 +5,19 @@
   text-align: center;
 }
 .add-button {
-  background-color: #007bff;
-  color: #fff;
+  background: linear-gradient(to bottom, #8e44ad, #3498db);
   border: none;
+  color: white;
   padding: 10px 20px;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  font-size: 16px;
+  transition: background 0.3s ease;
 }
 
+
 .add-button:hover {
-  background-color: #0056b3;
+  background: linear-gradient(to bottom, #3498db, #8e44ad);
 }
 
 .modern-table {
@@ -36,7 +38,7 @@
 
 
 .modern-table thead {
-  background-color: #3498db;
+  background: linear-gradient(to bottom, #b875d5, #7fc5f4);
   color: #fff;
 }
 
@@ -54,27 +56,67 @@
 }
 
 
-.update-button, .delete-button {
-  background-color: #3498db;
-  color: #fff;
-  border: none;
+.update-button {
+  background: none;
+  color: #2980b9; /* Couleur d'édition */
+  border: 2px solid #2980b9; /* Bordure de couleur d'édition */
   padding: 10px 20px;
-  margin-right: 10px;
-  border-radius: 4px;
+  margin-right: 20px;
+  border-radius: 5px;
+  font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  outline: none; /* Supprime le contour au focus */
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
 }
 
 .update-button:hover {
-  background-color: #2980b9;
+  background: #68b8ed; /* Fond bleu d'édition au survol */
+  color: #fff; /* Texte blanc au survol */
+  border-color: #fff; /* Bordure blanche au survol */
 }
 
+.update-button:active {
+  transform: scale(0.95); /* Réduire légèrement la taille lorsqu'il est cliqué */
+}
+
+
 .delete-button {
-  background-color: #e74c3c;
+  background: none;
+  color: #ff0000; /* Rouge */
+  border: 2px solid #ff0000; /* Bordure rouge */
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none; /* Supprime le contour au focus */
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 .delete-button:hover {
-  background-color: #c0392b;
+  background: #ed6464; /* Fond rouge au survol */
+    color: #fff; /* Texte blanc au survol */
+}
+.delete-button:active {
+  transform: scale(0.95); /* Réduire légèrement la taille lorsqu'il est cliqué */
+}
+
+/* Animation de suppression */
+@keyframes deleteAnimation {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(0.8);
+      opacity: 0.5;
+  }
+  100% {
+      transform: scale(0);
+      opacity: 0;
+  }
+}
+
+.delete-button.delete-animation {
+  animation: deleteAnimation 0.5s ease;
 }
 
 .modern-table th:nth-child(3),
