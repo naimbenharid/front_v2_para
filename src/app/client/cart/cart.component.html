@@ -1,5 +1,4 @@
-<app-navbar></app-navbar>
-<ng-container *ngIf="products.length !=0">
+<ng-container>
   <div class="container">
       <div class="card-table">
           <div class="cart-product">
@@ -20,8 +19,11 @@
                       <tr *ngFor="let item of products; let i = index">
                           <td>{{i+1}}</td>
                           <td>{{item.title}}</td>
+                          <td><img style="width: 120px;" src="{{item.image}}" alt=""></td>
                           <td style="width: 25%;">{{item.description}}</td>
                           <th style="width: 12%;">{{item.price}}</th>
+                          <td style="width: 12%;">{{item.quantity}}</td>
+                          <td style="width: 12%;">{{item.total}}</td>
                           <td>
                               <button (click)="removeItem(item)" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
                           </td>
@@ -41,7 +43,7 @@
 </ng-container>
 
 
-<ng-container *ngIf="products.length ==0">
+<ng-container>
   <div class="container">
       <div class="card">
           <h5 class="card-title">My Cart</h5>
@@ -54,24 +56,3 @@
       </div>
   </div>
 </ng-container>
-
-<!--
-<div class="shopping">
-  <h2>Your Products </h2>
-  <ul class="product-list">
-    <li class="product-item" >
-        <img [src]="curentProduct.imageUrl" alt="{{ curentProduct.name}}">
-        <div class="product-info">
-            <h3>{{curentProduct.name}}</h3>
-            <p>Price: ${{ curentProduct.price.toFixed(2) }}</p>
-            <input type="number" [(ngModel)]="curentProduct.quantity" (input)="updateTotalPrice()">
-        </div>
-        <button (click)="removeProduct(currentId)" class="remove-button">Remove</button>
-    </li>
-</ul>
-<div class="total">
-    <p>Total Price: ${{ total.toFixed(2) }}</p>
-    <button class="checkout-button">Checkout</button>
-</div>
-</div>
--->

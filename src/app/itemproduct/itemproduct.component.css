@@ -1,3 +1,7 @@
+.detail{
+  margin-top: 3px;
+  background-color: rgb(234, 228, 220);
+}
 /* Styles for the product detail container */
 .product-detail {
   display: flex;
@@ -7,10 +11,12 @@
   background-color: #f8f8f8;
   border: 1px solid #ddd;
   border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 14px 18px rgba(0, 0, 0, 0.2); /* Ajoute une ombre portée plus prononcée */
   max-width: 600px;
-  margin: 10px auto;
+  margin: 0 auto; /* Modifie la marge pour centrer horizontalement */
+  background: linear-gradient(to right, #78ffd6, #c88bfc); /* Changement de dégradé au survol */
 }
+
 
 /* Styles for the product image */
 .product-image {
@@ -36,7 +42,7 @@
 .product-title {
   font-size: 24px;
   font-weight: bold;
-  color: #333;
+  color: rgb(157, 9, 157);
   margin-bottom: 10px;
 }
 
@@ -49,21 +55,56 @@
 .product-price {
   font-size: 20px;
   font-weight: bold;
-  color: #007bff;
+  color: #bf0202;
   margin-bottom: 20px;
 }
 
-.add-to-cart {
-  background-color: #007bff;
-  color: #fff;
+.back-button {
+margin-right: 20px;
+width: 130px;
+  color:rgb(163, 17, 163);
   font-size: 18px;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background 0.3s ease;
+  box-shadow: 0px 13px 10px rgba(0, 0, 0, 0.2); /* Ajoute une ombre douce */
+  border: 2px solid #c88bfc; /* Ajoute une bordure */
+}
+
+.back-button:hover {
+  background: linear-gradient(to right, #78ffd6, #c88bfc); /* Changement de dégradé au survol */
+  transform: translateY(-2px); /* Légère animation d'élévation */
+}
+
+.back-button:active {
+  background: linear-gradient(to right, #64ffda, #ad78fc); /* Changement de dégradé au clic */
+  transform: translateY(0); /* Annule l'élévation au clic */
+  border: 2px solid #64ffda; /* Couleur de bordure au clic */
+}
+
+
+.add-to-cart {
+  transition: background 0.3s ease;
+  color: rgb(40, 212, 242);
+  font-size: 18px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid #c88bfc; /* Ajoute une bordure */
   transition: background-color 0.3s ease;
+  box-shadow: 0px 12px 10px rgba(0, 0, 0, 0.2); /* Ajoute une ombre douce */
 }
 
 .add-to-cart:hover {
-  background-color: #0056b3;
+  background: linear-gradient(to right, #64ffda, #ad78fc); /* Changement de dégradé au clic */
+  transform: translateY(-2px); /* Légère animation d'élévation */
 }
+
+.add-to-cart:active {
+  background: linear-gradient(to right, #64ffda, #ad78fc); /* Changement de dégradé au clic */
+  transform: translateY(0); /* Annule l'élévation au clic */
+}
+

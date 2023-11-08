@@ -1,12 +1,16 @@
-<app-navbar></app-navbar>
+<app-header></app-header>
+<div class="detail">
 <div class="product-detail">
   <div class="product-image">
-    <img src="../../assets/medi2.jpg" alt="title" />
+    <img src="{{currentProduct.image}}" alt="title" />
   </div>
   <div class="product-info">
-    <h2 class="product-title"> product.title </h2>
-    <p class="product-description"> product.description </p>
-    <p class="product-price">Price: $ product.price </p>
-    <button class="add-to-cart">Add to Cart</button>
+    <h2 class="product-title"> {{currentProduct.title}} </h2>
+    <p class="product-description">  {{currentProduct.description}}  </p>
+    <p class="product-price"> {{currentProduct.price}}  DT</p>
+    <button class="back-button"[routerLink]="['/products']">back</button>
+    <button class="add-to-cart"[routerLink]="['/card',currentId]">Add to Cart</button>
+
   </div>
+</div>
 </div>

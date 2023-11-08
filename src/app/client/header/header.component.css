@@ -1,0 +1,125 @@
+
+/* Style the list items in the navbar */
+.navbar-list {
+  list-style-type: none;
+}
+
+.navbar-item {
+  display: inline;
+  margin-right: 20px;
+}
+
+/* Style the links in the navbar */
+.navbar-item a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 19px;
+}
+
+/* Style the Login button */
+.login-button {
+  background-color: rgb(96, 0, 128);
+  color:#77beed;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 14px;
+  border-color:  #77beed;
+
+}
+#cart{
+ color:#73f3dc;
+}
+h3 {
+/* Couleur de départ (violet) */
+  color: #55ecbf;
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  font-size: 36px; /* Taille de la police */
+  font-weight: bold; /* Gras */
+  display: inline-block;
+  transition: transform 0.3s ease; /* Animation de transformation */
+  animation: moveTitle 1.5s ease infinite; /* Animation de mouvement */
+}
+
+@keyframes moveTitle {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px); /* Mouvement vers la droite */
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+h3:hover {
+  transform: scale(1.1); /* Zoom au survol */
+  filter: brightness(1.2); /* Augmente la luminosité au survol */
+  background-image: linear-gradient(to right, #78ffd6, #8e44ad); /* Inversion du dégradé au survol */
+  text-decoration: underline;
+  transition: transform 0.3s ease, filter 0.3s ease, background-image 0.3s ease; /* Animation de transformation et de couleur au survol */
+}
+
+
+#dar{
+  margin-left: 60px;
+}
+.login-button:hover {
+  background-color: #2980b9;
+}
+
+.navbar-item a:hover {
+  border-bottom: 2px solid #fff;
+}
+
+.navbar {
+  background: linear-gradient(to right, #3498db, #8e44ad);
+  /* Pour les navigateurs qui ne prennent pas en charge les dégradés CSS3 */
+  background: -webkit-linear-gradient(to right, #4789b5, #a35ec1);
+  /* Pour les navigateurs Safari 5.1 à 6.0 */
+  background: -moz-linear-gradient(to right, #3498db, #8e44ad);
+  /* Pour les navigateurs Firefox 3.6 à 15 */
+  background: -o-linear-gradient(to right, #3498db, #8e44ad);
+  /* Pour les navigateurs Opera 11.1 à 12.0 */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3498db', endColorstr='#8e44ad',GradientType=1);
+  /* Pour les navigateurs IE 6 à 9 */
+
+  color: #fff;
+
+  text-align: center;
+}
+
+
+/* Style de l'icône "Search" à gauche de l'élément input */
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-container input[type="text"] {
+  padding-left: 30px; /* Espacement à gauche pour l'icône */
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  width: 500px; /* Largeur de l'input */
+  height: 37px; /* Hauteur de l'input */
+  outline: none; /* Supprime le contour de l'input au focus */
+}
+
+/* Style du texte dans l'input */
+.search-container input[type="text"]::placeholder {
+  color: #999;
+}
+
+/* Style de l'icône "Search" */
+.search-icon {
+  position: absolute;
+  left: 10px; /* Position de l'icône à gauche */
+  color: #a35ec1; /* Couleur de l'icône */
+  font-size: 16px; /* Taille de l'icône */
+}

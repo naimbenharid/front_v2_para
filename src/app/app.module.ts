@@ -28,6 +28,10 @@ import { ProdComponent } from './prod/prod.component';
 import { UpdateprodComponent } from './prod/updateprod/updateprod.component';
 import { ProdlistComponent } from './prod/prodlist/prodlist.component';
 import { AddprodComponent } from './prod/addprod/addprod.component';
+import { ShopComponent } from './client/shop/shop.component';
+import { HeaderComponent } from './client/header/header.component';
+import { CommonModule } from '@angular/common';
+
 
 @NgModule({
   declarations: [
@@ -55,6 +59,9 @@ import { AddprodComponent } from './prod/addprod/addprod.component';
     UpdateprodComponent,
     ProdlistComponent,
     AddprodComponent,
+    ShopComponent,
+    HeaderComponent,
+
 
 
 
@@ -64,6 +71,7 @@ import { AddprodComponent } from './prod/addprod/addprod.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule ,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

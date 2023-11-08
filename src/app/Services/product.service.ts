@@ -44,4 +44,68 @@ export class ProductService {
   deleteProduct(id: number): Observable<void> {
     return this.httpClient.delete<void>(`${this.apiUrl}/deleteProduct/${id}`);
   }
+
+  products = [
+    {id:1,
+      title: 'Protéine-Shampoo',
+      description: 'Protein pour cheveux seches',
+      price: 70.99 ,
+      image : '../../assets/champoo.jpg'
+    },
+    {id:2,
+      title: 'Créme cheveux Homme',
+      description: 'Créme facilitateur',
+      price: 29.99,
+      image : '../../assets/cremecheveuc.jpg'
+
+    },
+    {id:3,
+      title: 'Masque COCO-Soin',
+      description: 'Masque pour cheveux long',
+      price: 75.99,
+      image : '../../assets/masqueCOCO Soin.jpg'
+
+    },
+    {id:4,
+      title: 'Sérum cheveux PHYTEAL',
+      description: 'Sérum cheveux sec',
+      price: 49.99,
+      image : '../../assets/serum cheveux sec.jpg'
+
+    },
+    {id:5,
+      title: 'Sérum-luxiole',
+      description: 'Sérum pousse pour tout type de cheveux',
+      price: 90.99,
+      image : '../../assets/serum lexiole.jpg'
+
+    },
+    {id:6,
+      title: 'Soins Protecteur',
+      description: 'Soins capiliar cheveu',
+      price: 59.99,
+      image : '../../assets/soins_capilaire_cheveux.jpg'
+
+    },
+    {id:7,
+      title: 'Vitamine',
+      description: 'Vitamine A-D-E pour les cheveux',
+      price: 87.99,
+      image : '../../assets/vitamine.jpg'
+    },
+    {id:8,
+      title: 'Capsule Vitamine',
+      description: 'Vitamine H-D pour les cheveux',
+      price: 87.99,
+      image : '../../assets/Capsule Vitamine.jpg'
+
+    }
+  ];
+getProd(){
+  return this.products;
+}
+getProdById(id : any){
+return  this.products.find( e => e.id==id )
+}
+
 }

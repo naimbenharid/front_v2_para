@@ -20,6 +20,9 @@ import { ItemComponent } from './item/item.component';
 import { ProdlistComponent } from './prod/prodlist/prodlist.component';
 import { AddprodComponent } from './prod/addprod/addprod.component';
 import { UpdateprodComponent } from './prod/updateprod/updateprod.component';
+import { CartComponent } from './client/cart/cart.component';
+import { ShopComponent } from './client/shop/shop.component';
+import { HeaderComponent } from './client/header/header.component';
 
 
 
@@ -48,13 +51,21 @@ const routes: Routes = [
 
 
   {path:"products",component:ProductComponent},
-  {path:"item",component:ItemproductComponent},
-  {path:"card",component:ShoppingcardComponent},
+  {path:"item/:id",component:ItemproductComponent},
+  {path:"card/:id",component:ShoppingcardComponent},
 
 
   {path:"admin",component:AdminComponent},
 
   {path :"" ,component:HomeComponent },
+
+
+  {path:"cart",component:CartComponent},
+  {path:"shopo",component:ShopComponent},
+  {path:"header",component:HeaderComponent},
+
+
+
 
 ];
 

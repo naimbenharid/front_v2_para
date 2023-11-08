@@ -20,7 +20,7 @@ l<app-navbar></app-navbar>
   <label>
     <span>Status &nbsp;&nbsp;</span>
     <select  class="select-status " [(ngModel)]="newOrder!.orderStatus" name="OrderStatus">
-      <option *ngFor="let order of OrderStatus" [ngValue]=order>
+      <option *ngFor="let order of OrderStatus" [ngValue]="order">
         {{order}}
        </option>
     </select>

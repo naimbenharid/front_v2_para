@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Inclure Font Awesome depuis un CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+  <nav class="navbar">
+    <i class="fa fa-home fa-3x" id="dar" idaria-hidden="true" [routerLink]="['']"> </i>
+    <h3>PharmaShope</h3>
+    <i class="fa fa-cart-plus fa-3x" id="cart" idaria-hidden="true"></i>
+    <div class="search-container">
+      <input type="text" placeholder="  search...">
+      <i class="fa fa-search search-icon"></i>
+    </div>
+    <ul class="navbar-list navbar-right">
+
+      <li class="navbar-item">
+        <button class="login-button" [routerLink]="['/logout']">
+          Register <i class="fa fa-user-plus" aria-hidden="true"></i>
+        </button>
+      </li>
+      <li class="navbar-item">
+        <button class="login-button" [routerLink]="['/register']">
+          Logout <i class="fa fa-outdent" aria-hidden="true"></i>
+
+        </button>
+      </li>
+    </ul>
+  </nav>
+</body>
+</html>

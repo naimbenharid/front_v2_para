@@ -1,5 +1,6 @@
 .product-container {
   display: flex;
+  margin-top: 20px;
   flex-wrap: wrap;
   justify-content: space-between;
 }
@@ -55,21 +56,41 @@ img {
 
 .text .p {
   font-family: system-ui;
-  color: #999999;
+  color: #151515;
   font-size: 14px;
   margin: 0px;
   text-align: center;
   padding: 5px;
+  font-weight: bold;
+}
+.text .t {
+  font-family: system-ui;
+  color: #706969;
+  font-size: 14px;
+  margin: 0px;
+  text-align: center;
+  padding: 5px;
+  font-weight: bold;
 }
 
 .icon-box {
-  margin: 10px;
+  margin-left: 110px;
   padding: 12px;
-  background-color: #7980c5;
+  background: linear-gradient(to right, #3498db, #cd91e6);
   border-radius: 10px;
   text-align: center;
   height: 45px;
+  width: 130px;
+  transition: background 0.3s; /* Ajoute une transition pour une animation fluide */
+
+  /* L'arrière-plan sera différent au survol */
 }
+
+.icon-box:hover {
+  background: linear-gradient(to right, #36c0d8, #7aebbe);
+}
+
+
 
 .icon-box .span {
   font-family: system-ui;
@@ -77,3 +98,4 @@ img {
   font-weight: 500;
   color: #fff;
 }
+
