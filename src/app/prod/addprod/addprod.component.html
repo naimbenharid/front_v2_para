@@ -17,10 +17,10 @@
   </div>
 
   <div class="input-container ic2">
-    <select class="input" id="brandSelect" [(ngModel)]="selectedBrandId" name="selectedBrandId">
+    <select class="input" id="brandSelect" [(ngModel)]="selectedBrand" name="selectedBrandId">
       <!--Select Brand-->
       <option value=""></option>
-      <option *ngFor="let brand of brands"  [ngValue]= brand.id >
+      <option *ngFor="let brand of brands"  [ngValue]= brand>
            {{brand.name}}
      </option>
            <!--End-->
@@ -30,10 +30,10 @@
   </div>
 
   <div class="input-container ic2">
-    <select class="input" id="categorySelect" [(ngModel)]="selectedCategoryId" name="selectedBrandId">
+    <select  class="input" id="categorySelect" [(ngModel)]="selectedCategory" name="selectedBrandId">
        <!--Select Category-->
        <option value=""></option>
-       <option *ngFor="let category of categories" [ngValue]=category.name>
+       <option *ngFor="let category of categories" [ngValue]=category>
        {{category.name}}
       </option>
             <!--End-->
@@ -53,6 +53,30 @@
     <div class="cut cut-short"></div>
     <label class="iLabel" for="quantity">Quantity</label>
   </div>
+
+   <div class="input-container ic2">
+    <select  class="input" id="imageSelect" [(ngModel)]="selectedImage" name="selectedImageId">
+       <!--Select Image-->
+       <option value=""></option>
+       <option *ngFor="let image of images" [ngValue]=image>
+       {{image.name}}
+      </option>
+            <!--End-->
+    </select>
+    <div class="cut cut-short"></div>
+    <label class="iLabel" for="categorySelect">Select Image</label>
+  </div>
+
+  <div class="col-sm-16 col-md-16 col-lg-16">
+    <label class="mb-2">Image :</label>
+    <input type="file" (change)="onImageUpload($event)" name="logo" class="form-control">
+  </div>
+  
+  <div class="col-sm-16 col-md-16 col-lg-16">
+    <img [src]="imagePath" class="card-img-top img-fluid rounded-start" style="width: 500px; height: 300px" />
+ </div>
+
   <button class="submit"   (click)="addProduct()" [routerLink]="['/prod']" type="text">ADD PRODUCT</button>
 </div>
 </div>
+

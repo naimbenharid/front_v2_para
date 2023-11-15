@@ -116,6 +116,12 @@
 .input {
   font-size: medium;
 }
+.error{
+  margin-left:600px;
+  margin-right:600px;
+  margin-top:35px;
+
+}
 
 .submit {
      border: 2px solid #670691; /* Bordure violette */
@@ -144,4 +150,5 @@
     transform: scale(1.8);
     opacity: 0;
   }
+
 }

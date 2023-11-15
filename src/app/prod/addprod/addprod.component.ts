@@ -1,3 +1,4 @@
+import { ImageService } from './../../Services/image.service';
 import { Product } from './../../Models/Product';
 import { Category } from './../../Models/Category';
 import { Brand } from './../../Models/Brand';
@@ -6,6 +7,7 @@ import { BrandService } from 'src/app/Services/brand.service';
 import { CategoryService } from 'src/app/Services/category.service';
 import { ProductService } from 'src/app/Services/product.service';
 import { Router } from '@angular/router';
+import { Image } from 'src/app/Models/Image';
 
 @Component({
   selector: 'app-addprod',
@@ -14,45 +16,51 @@ import { Router } from '@angular/router';
 })
 export class AddprodComponent {
 
-  newBrand = new Brand();
+  uploadedImage!: File;
+  imagePath: any;
+
+  categories: Category[] = [];
+  selectedCategory : any;
   newCategory =new Category();
- // newProduct =new Product();
-  selectedCategoryId?: number ;
-  selectedBrandId?: number;
+
+ brands: Brand[] = [];
+ selectedBrand : any;
+ newBrand = new Brand();
+
+ images : Image[]=[]
+ selectedImage :any ;
+ newImage =new Image();
 
   products!: Product[];
-
-
-  newProduct: Product = new Product(); // Initialisez un nouvel objet Product
-  categories: Category[] = []; // Initialisez la liste des catégories
-  brands: Brand[] = [];
-
+  newProduct: Product = new Product();
 
   constructor(private  brandService : BrandService,
               private categoryService :CategoryService,
               private productService:ProductService,
               private router : Router)  {}
 
-  onCategorySelect(selectedValue: any)
-    {
-    console.log('Catégorie sélectionnée :', selectedValue);
-    this.newProduct.category = selectedValue;
-    }
-
 
   ngOnInit(): void
     {
       this.getBrands();
       this.getCategories();
+      this.getImages();
+
     }
 
   addProduct ()
-    {
-      console.log('Catégorie sélectionnée dans addProduct :', this.newProduct.category);
+    {this.productService
+      .uploadImage(this.uploadedImage, this.uploadedImage.name)
+      .subscribe((img: Image) => {
+      this.newProduct.image=img;
+      this.newProduct.category=this.selectedCategory;
+      this.newProduct.brand=this.selectedBrand;
+      console.log('Catégorie sélectionnée dans addProduct :', this.newProduct);
       this.productService.createProduct(this.newProduct).subscribe(v => {
-      console.log(v);
+        console.log(v) ;
+        console.log(this.selectedImage);
       this.router.navigate(['/prod']);
-      });
+      });});
    }
 
 
@@ -67,6 +75,16 @@ export class AddprodComponent {
        this.brandService.getAllBrands();
 }
 
+getImages()
+   {
+     this.productService.getAllImages().subscribe(image =>
+       {
+       this.images = image;
+       console.log(image);
+       })
+       this.productService.getAllImages();
+}
+
   getCategories()
     {
       this.categoryService.getAllCategories().subscribe(cat =>
@@ -76,4 +94,11 @@ export class AddprodComponent {
         })
         this.categoryService.getAllCategories();
     }
+
+    onImageUpload(event: any) {
+      this.uploadedImage = event.target.files[0];
+      var reader = new FileReader();
+      reader.readAsDataURL(this.uploadedImage);
+      reader.onload = (_event) => { this.imagePath = reader.result; }
+      }
 }

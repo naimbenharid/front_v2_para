@@ -10,61 +10,39 @@ import { CartService } from '../Service_Client/cart.service';
   styleUrls: ['./shoppingcard.component.css']
 })
 export class ShoppingcardComponent implements OnInit{
+  currentId : any ;
+  currentProduct :any;
+  productsCard: any[] = [];
+  grandTotal: number = 0;
 
-  public grandTotal !: number;
-  constructor(private cartService : CartService) { }
+  constructor(private cartService : CartService, private activatedRoute: ActivatedRoute,private servprod :ProductService) { }
 
   ngOnInit(): void {
-this.products=this.cartService.getProd();
+    this.activatedRoute.paramMap.subscribe({
+      next:(p:ParamMap) => {
+        this.currentId =p.get('id')
+        console.log(this.currentId);
+        this.currentProduct=this.servprod.getProdById(this.currentId)
+        console.log(this.currentProduct);
+      }
+     })
+     this.cartService.addToCart(this.currentProduct);
+     this.productsCard=this.cartService.getProd();
+     this.grandTotal=this.cartService.getTotalPrice()
 
-    /*
-    this.cartService.getProducts()
-    .subscribe(res=>{
-      this.products = res;
-      this.grandTotal = this.cartService.getTotalPrice();
-    })*/
-  }
-  removeItem(item: any){
-    this.cartService.removeCartItem(item);
-  }
-
-  emptycart(){
-    this.cartService.removeAllCart();
   }
 
-  products = [
-    {id:1,
-      title: 'Product 1',
-      description: 'Description for Product 1',
-      price: 19.99
-    },
-    {id:2,
-      title: 'Product 2',
-      description: 'Description for Product 2',
-      price: 29.99
-    },
-    {
-      title: 'Product 3',
-      description: 'Description for Product 3',
-      price: 39.99
-    },
-    {
-      title: 'Product 4',
-      description: 'Description for Product 4',
-      price: 49.99
-    },
-    {
-      title: 'Product 5',
-      description: 'Description for Product 5',
-      price: 59.99
-    }
-  ];
+  removeItem(product: any): void {
+    this.cartService.removeItem(product);
+  }
 
-getProd(){
-  return this.products;
-}
+  emptyCart(): void {
+    this.cartService.emptyCart();
+    this.productsCard=[];
 
 
+  }
+  }
 
  /* currentId: any;
 curentProduct : any;
@@ -104,5 +82,3 @@ this.activatedRoute.paramMap.subscribe({
   }
 
   private _total = 0;*/
-
-}

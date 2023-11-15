@@ -23,27 +23,29 @@ import { UpdateprodComponent } from './prod/updateprod/updateprod.component';
 import { CartComponent } from './client/cart/cart.component';
 import { ShopComponent } from './client/shop/shop.component';
 import { HeaderComponent } from './client/header/header.component';
+import { ProduitGuard } from './produit.guard';
+import { ForbbidenComponent } from './forbbiden/forbbiden/forbbiden.component';
 
 
 
 const routes: Routes = [
   {path:"prod",component:ProdlistComponent},
-  {path:"addprod",component:AddprodComponent},
-  {path:"updateprod/:id",component:UpdateprodComponent},
+  {path:"addprod",component:AddprodComponent,canActivate:[ProduitGuard]},
+  {path:"updateprod/:id",component:UpdateprodComponent,canActivate:[ProduitGuard]},
 
 
-  {path :"orders" , component: OrderComponent},
-  {path :"addorder" , component: AddOrderComponent},
-  {path :"updateorder/:id" , component: UpdateOrderComponent},
+  {path :"orders" , component: OrderComponent,},
+  {path :"addorder" , component: AddOrderComponent,canActivate:[ProduitGuard]},
+  {path :"updateorder/:id" , component: UpdateOrderComponent,canActivate:[ProduitGuard]},
 
   {path :"brands" , component: BrandComponent},
-  {path :"addbrand" , component: AddBrandComponent},
-  {path :"updatebrand/:id" , component: UpdateBrandComponent},
+  {path :"addbrand" , component: AddBrandComponent,canActivate:[ProduitGuard]},
+  {path :"updatebrand/:id" , component: UpdateBrandComponent,canActivate:[ProduitGuard]},
 
 
   {path :"categories" , component: CategoryComponent},
-  {path :"addcategory" , component: AddCategoryComponent},
-  {path :"updatecategory/:id" , component: UpdateCategoryComponent},
+  {path :"addcategory" , component: AddCategoryComponent,canActivate:[ProduitGuard]},
+  {path :"updatecategory/:id" , component: UpdateCategoryComponent,canActivate:[ProduitGuard]},
 
 
   {path:"register",component:RegisterComponent},
@@ -54,17 +56,18 @@ const routes: Routes = [
   {path:"item/:id",component:ItemproductComponent},
   {path:"card/:id",component:ShoppingcardComponent},
 
-
+  {path:"forbidden",component:ForbbidenComponent},
   {path:"admin",component:AdminComponent},
 
   {path :"" ,component:HomeComponent },
-
-
-  {path:"cart",component:CartComponent},
-  {path:"shopo",component:ShopComponent},
   {path:"header",component:HeaderComponent},
 
 
+/*
+  {path:"cart",component:CartComponent},
+  {path:"shopo",component:ShopComponent},
+
+*/
 
 
 ];

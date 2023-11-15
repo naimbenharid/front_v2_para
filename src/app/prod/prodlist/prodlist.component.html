@@ -13,6 +13,7 @@
               <th>category</th>
               <th>Price</th>
               <th>Quantity</th>
+              <th>Image</th>
               <th>Actions</th>
           </tr>
       </thead>
@@ -20,10 +21,12 @@
         <tr *ngFor="let prod of products ">
           <td>{{prod.name}}</td>
           <td>{{prod.description}} </td>
-          <td>{{prod.brand?.push}} </td>
-          <td>{{prod.category?.push}} </td>
-          <td>{{prod.price}}</td>
-          <td>{{prod.qte}}</td>
+          <td>{{prod?.brand?.name}} </td>
+          <td>{{prod?.category?.name}} </td>
+          <td>{{prod?.price}}$</td>
+          <td>{{prod?.qte}}</td>
+          <td>
+          <img class="card-img-top img-responsive" src = "{{prod.imageStr}}" style = "height :50px;width:100px"></td>
           <td>
             <button class="update-button" [routerLink]="['/updateprod',prod.id]">Update</button>
             <button class="delete-button" (click)="delete(prod.id)">Delete</button>

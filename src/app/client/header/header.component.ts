@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/Service_Client/auth.service';
 import { CartService } from 'src/app/Service_Client/cart.service';
 
 @Component({
@@ -9,8 +10,8 @@ import { CartService } from 'src/app/Service_Client/cart.service';
 export class HeaderComponent {
   public totalItem : number = 0;
   public searchTerm !: string;
-  constructor(private cartService : CartService) { }
-
+  constructor(private cartService : CartService, public authService :AuthService) { }
+/*
   ngOnInit(): void {
     this.cartService.getProducts()
     .subscribe(res=>{
@@ -22,5 +23,6 @@ export class HeaderComponent {
     console.log(this.searchTerm);
     this.cartService.search.next(this.searchTerm);
   }
-
+*/
+OnLogout(){}
 }

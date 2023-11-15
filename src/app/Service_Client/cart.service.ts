@@ -1,79 +1,41 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
 
-  public cartItemList : any =[]
-  public productList = new BehaviorSubject<any>([]);
-  public search = new BehaviorSubject<string>("");
-
+  public products:any[]=[];
+ // public products$: Observable<any[]> = this.products.asObservable();
 
   constructor() { }
 
-  getProducts(){
-    return this.productList.asObservable();
+  // Méthode pour ajouter un produit au panier
+  addToCart(product: any): void {
+    console.log(this.products);
+    this.products.push(product);
   }
 
-  setProduct(product : any){
-    this.cartItemList.push(...product);
-    this.productList.next(product);
-  }
-  addtoCart(product : any){
-    this.cartItemList.push(product);
-    this.productList.next(this.cartItemList);
-    this.getTotalPrice();
-    console.log(this.cartItemList)
-  }
-  getTotalPrice() : number{
-    let grandTotal = 0;
-    this.cartItemList.map((a:any)=>{
-      grandTotal += a.total;
-    })
-    return grandTotal;
-  }
-  removeCartItem(product: any){
-    this.cartItemList.map((a:any, index:any)=>{
-      if(product.id=== a.id){
-        this.cartItemList.splice(index,1);
-      }
-    })
-    this.productList.next(this.cartItemList);
-  }
-  removeAllCart(){
-    this.cartItemList = []
-    this.productList.next(this.cartItemList);
+  // Méthode pour vider le panier
+  emptyCart(): void {
+    this.products=[];
   }
 
-  products = [
-    {id:1,
-      title: 'Product 1',
-      description: 'Description for Product 1',
-      price: 19.99
-    },
-    {id:2,
-      title: 'Product 2',
-      description: 'Description for Product 2',
-      price: 29.99
-    },
-    {
-      title: 'Product 3',
-      description: 'Description for Product 3',
-      price: 39.99
-    },
-    {
-      title: 'Product 4',
-      description: 'Description for Product 4',
-      price: 49.99
-    },
-    {
-      title: 'Product 5',
-      description: 'Description for Product 5',
-      price: 59.99
+  // Méthode pour supprimer un produit du panier
+  removeItem(product: any): void {
+    let index = this.products.indexOf(product);
+    if(index !== -1){
+      this.products.splice(index,1)
     }
-  ];
+  }
+
+  // Méthode pour calculer le total des prix des produits dans le panier
+  getTotalPrice(): number {
+    return this.products.reduce((total, product) => total + (product.qte * product.price), 0);
+  }
+
+
 
 getProd(){
   return this.products;

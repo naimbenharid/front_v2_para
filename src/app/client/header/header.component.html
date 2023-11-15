@@ -8,6 +8,7 @@
   <nav class="navbar">
     <i class="fa fa-home fa-3x" id="dar" idaria-hidden="true" [routerLink]="['']"> </i>
     <h3>PharmaShope</h3>
+    <a class="nav-link"> </a>
     <i class="fa fa-cart-plus fa-3x" id="cart" idaria-hidden="true"></i>
     <div class="search-container">
       <input type="text" placeholder="  search...">
@@ -16,13 +17,13 @@
     <ul class="navbar-list navbar-right">
 
       <li class="navbar-item">
-        <button class="login-button" [routerLink]="['/logout']">
+        <button   class="login-button" [routerLink]="['/logout']">
           Register <i class="fa fa-user-plus" aria-hidden="true"></i>
         </button>
       </li>
       <li class="navbar-item">
-        <button class="login-button" [routerLink]="['/register']">
-          Logout <i class="fa fa-outdent" aria-hidden="true"></i>
+        <button   class="login-button" [routerLink]="['/register']" (click)="OnLogout()" >
+         Logout <i class="fa fa-outdent" aria-hidden="true"></i>
 
         </button>
       </li>

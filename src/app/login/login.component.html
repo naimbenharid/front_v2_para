@@ -1,18 +1,19 @@
 <app-navbar></app-navbar>
-<form class="form">
+
+<form class="form" [formGroup]="signInForm" (ngSubmit)="signIn()">
   <p class="title">Login</p>
   <p class="message">Welcome To Our Website Again </p>
 
   <label>
-      <input class="input" type="email" placeholder="" required="">
+      <input class="input" type="email" placeholder="" required="" formControlName="useremail">
       <span>Email</span>
   </label>
 
   <label>
-      <input class="input" type="password" placeholder="" required="">
+      <input class="input" type="password" placeholder="" required="" formControlName="password">
       <span>Password</span>
   </label>
 
-  <button class="submit">Login</button>
+  <button  type="submit" class="submit" [disabled]="signInForm.invalid">Login</button>
   <p class="signin">don't have an acount ? <a href="/register">Signup</a> </p>
 </form>

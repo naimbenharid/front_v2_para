@@ -13,14 +13,13 @@ import { OrderService } from 'src/app/Services/order.service';
 })
 export class AddOrderComponent {
 
- users!: User
-  /*orderItems!:OrderItem[]=[];*/
-  newOrder = new OrderCustomer();
+ newOrder = new OrderCustomer();
 
  OrderStatus = Object.values(OrderStatus);
  orderStatu?:OrderStatus;
 
- order: OrderCustomer = new OrderCustomer();
+ status : any ;
+ order = new OrderCustomer();
 
   constructor( private orderService: OrderService, private router : Router ) {}
 
@@ -29,16 +28,13 @@ export class AddOrderComponent {
 
   }
   add(){
-    console.log(this.order);
-    this.orderService.postOrder(this.order).subscribe(
-      (response) => {
-        console.log('Commande ajoutée avec succès', response);
-        this.order = new OrderCustomer();
-      },
-      (error) => {
-        console.error('Erreur lors de l\'ajout de la commande', error);
-      }
-    );
+    this.newOrder.orderStatus=this.status;
+    console.log(this.status);
+    console.log(this.newOrder);
+    this.orderService.postOrder(this.newOrder).subscribe(v => {
+      });
+      this.router.navigateByUrl("/orders");
+
   }
 
 

@@ -19,16 +19,16 @@ l<app-navbar></app-navbar>
 
   <label>
     <span>Status &nbsp;&nbsp;</span>
-    <select  class="select-status " [(ngModel)]="newOrder!.orderStatus" name="OrderStatus">
-      <option *ngFor="let order of OrderStatus" [ngValue]="order">
-        {{order}}
+    <select  class="select-status " [(ngModel)]="status" name="OrderStatusId">
+      <option *ngFor="let ord of OrderStatus" [ngValue]="ord">
+        {{ord}}
        </option>
     </select>
   </label>
 
   <button type="submit"  (click)="add()" [routerLink]="['/orders']" class="fancy">
     <span class="top-key"></span>
-    <span class="text">submit</span>
+    <span class="text">Add</span>
     <span class="bottom-key-1"></span>
     <span class="bottom-key-2"></span>
   </button>

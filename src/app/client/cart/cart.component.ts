@@ -12,17 +12,17 @@ export class CartComponent {
   constructor(private cartService : CartService) { }
 
   ngOnInit(): void {
-    this.cartService.getProducts()
+   /* this.cartService.getProducts()
     .subscribe(res=>{
       this.products = res;
       this.grandTotal = this.cartService.getTotalPrice();
-    })
+    })*/
   }
   removeItem(item: any){
-    this.cartService.removeCartItem(item);
+    //this.cartService.removeItem(item);
   }
   emptycart(){
-    this.cartService.removeAllCart();
+   // this.cartService.removeAllCart();
   }
 
 }

@@ -7,7 +7,7 @@ import { BrandComponent } from './Brand/brand/brand.component';
 import { AddBrandComponent } from './Brand/add-brand/add-brand.component';
 import { UpdateBrandComponent } from './Brand/update-brand/update-brand.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CategoryComponent } from './Category/category/category.component';
 import { AddCategoryComponent } from './Category/add-category/add-category.component';
 import { UpdateCategoryComponent } from './Category/update-category/update-category.component';
@@ -31,6 +31,7 @@ import { AddprodComponent } from './prod/addprod/addprod.component';
 import { ShopComponent } from './client/shop/shop.component';
 import { HeaderComponent } from './client/header/header.component';
 import { CommonModule } from '@angular/common';
+import { ForbbidenComponent } from './forbbiden/forbbiden/forbbiden.component';
 
 
 @NgModule({
@@ -61,6 +62,7 @@ import { CommonModule } from '@angular/common';
     AddprodComponent,
     ShopComponent,
     HeaderComponent,
+    ForbbidenComponent,
 
 
 
@@ -70,7 +72,8 @@ import { CommonModule } from '@angular/common';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule ,
+    ReactiveFormsModule,
+    HttpClientModule,
     CommonModule
   ],
   providers: [],

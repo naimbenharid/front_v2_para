@@ -3,8 +3,8 @@ export class Category {
     id: number;
     name: string;
     description: string;
-    products: Product[];
-  
+    products!: Product[];
+
     constructor() {
       this.id = 0;
       this.name = '';
@@ -12,4 +12,3 @@ export class Category {
       this.products = [];
     }
   }
-  

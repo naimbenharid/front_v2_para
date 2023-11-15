@@ -1,9 +1,11 @@
 import { OrderCustomer } from "./OrderCustomer";
 
 export class User {
-  id: number =0;
+  id!: number;
   username: string="";
+  lastname:string="";
   password: string ="";
-  email: string ="";
+  useremail: string ="";
   orders!: OrderCustomer[];
+  roles:string[]=["ADMIN","USER"];
 }
